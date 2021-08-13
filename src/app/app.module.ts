@@ -1,12 +1,20 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {NavBarComponent} from './components/nav-bar/nav-bar.component';
+import { CategoryComponent } from './components/category/category.component';
+import { HomeComponent } from './components/home/home.component';
+import { NewComponent } from './components/new/new.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavBarComponent,
+    CategoryComponent,
+    HomeComponent,
+    NewComponent
   ],
   imports: [
     BrowserModule,
@@ -15,4 +23,5 @@ import { AppComponent } from './app.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
