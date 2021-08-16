@@ -13,7 +13,7 @@ export class CategoryComponent implements OnInit {
   sub: Subscription;
 
   constructor(private _activatedRoute: ActivatedRoute) {
-    this.selectedCategory = new Category("");
+    this.selectedCategory = {name: ""};
     this.sub = new Subscription();
   }
 

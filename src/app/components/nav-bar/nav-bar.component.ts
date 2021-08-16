@@ -1,6 +1,6 @@
 import {Component, OnInit, Output} from '@angular/core';
 import {Category} from "../../models/category";
-import {CategoryService} from "../../services/category.service";
+import {MenuService} from "../../services/menu.service";
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,9 +9,9 @@ import {CategoryService} from "../../services/category.service";
 })
 export class NavBarComponent implements OnInit {
   @Output() items: Category[];
-  categoryService : CategoryService;
+  categoryService : MenuService;
 
-  constructor(categoryService: CategoryService) {
+  constructor(categoryService: MenuService) {
     this.categoryService = categoryService;
     this.items = [];
   }
