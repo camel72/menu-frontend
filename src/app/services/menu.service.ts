@@ -26,9 +26,11 @@ export class MenuService {
 
     this.menuList = [
       {
-        name: "test",
+        name: "Spaghetti",
         category: pastaCategory,
-        ingredients: [{name: "testIngre", quantity: 10}]
+        ingredients: [
+          {name: "pasta", quantity: "500 gr."},
+          {name: "water", quantity: "1,5 l"}]
       }
     ];
   }
@@ -37,7 +39,8 @@ export class MenuService {
     return this.categories;
   }
 
-  getMenuList(category: Category) {
-
+  getMenuListByCategory(category: Category)  {
+    let find = this.menuList.find(value => value.category.name == category.name);
+    console.log("menuservice: menuLIst find : " );
   }
 }

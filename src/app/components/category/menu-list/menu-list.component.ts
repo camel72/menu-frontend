@@ -1,6 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, SimpleChanges} from '@angular/core';
 import {Category} from "../../../models/category";
-import {CategoryService} from "../../../services/category.service";
+import {MenuService} from "../../../services/menu.service";
+import {Menu} from "../../../models/menu";
+
 
 @Component({
   selector: 'app-menu-list',
@@ -8,13 +10,23 @@ import {CategoryService} from "../../../services/category.service";
   styleUrls: ['./menu-list.component.scss']
 })
 export class MenuListComponent implements OnInit {
-  @Input() selectedCategory: Category
+  @Input() selectedCategory: Category;
+  //menuList: Menu[];
 
-  constructor(private categoryService: CategoryService) {
-    this.selectedCategory = new Category("test");
+
+  constructor(private menuService: MenuService) {
+    console.log("in constructor menu-list");
+    this.selectedCategory = {name: ""};
+    //this.menuList = menuList;
   }
 
   ngOnInit(): void {
+    console.log("in oninit menu-list");
   }
 
+  ngOnChanges(changes: SimpleChanges){
+    console.log("change occurred:" + this.selectedCategory);
+    // TODO return type
+    this.menuService.getMenuListByCategory(this.selectedCategory);
+  }
 }
