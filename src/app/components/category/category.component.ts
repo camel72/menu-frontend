@@ -1,7 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {Subscription} from "rxjs";
+import {ReplaySubject, Subscription} from "rxjs";
 import {Category} from "../../models/category";
+import {CategoryService} from "../../services/category.service";
+import {takeUntil} from "rxjs/operators";
 
 @Component({
   selector: 'app-category',
@@ -10,23 +12,22 @@ import {Category} from "../../models/category";
 })
 export class CategoryComponent implements OnInit {
   selectedCategory: Category
-  sub: Subscription;
+  changeCategorySubscription: Subscription;
 
-  constructor(private _activatedRoute: ActivatedRoute) {
+  constructor(private _activatedRoute: ActivatedRoute, private categoryService: CategoryService) {
     this.selectedCategory = {name: ""};
-    this.sub = new Subscription();
+    this.changeCategorySubscription = new Subscription();
   }
 
   ngOnInit(): void {
-    this.sub = this._activatedRoute.params
-      .subscribe(params => {
+    this.changeCategorySubscription = this._activatedRoute.params.subscribe(
+      params => {
           this.selectedCategory = params['item'];
-          console.log(this.selectedCategory);
         }
       );
   }
 
   ngOnDestroy(): void {
-    this.sub.unsubscribe();
+    this.changeCategorySubscription.unsubscribe();
   }
 }

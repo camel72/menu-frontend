@@ -8,7 +8,7 @@ import {MenuService} from "../../services/menu.service";
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
-  @Output() items: Category[];
+  items: Category[];
   categoryService : MenuService;
 
   constructor(categoryService: MenuService) {
@@ -19,8 +19,4 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void {
     this.items = this.categoryService.getCategories();
   }
-
-  // selectCategory(item: string) {
-  //   console.log("in select category");
-  // }
 }
