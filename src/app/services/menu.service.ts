@@ -39,8 +39,12 @@ export class MenuService {
     return this.categories;
   }
 
-  getMenuListByCategory(category: Category)  {
-    let find = this.menuList.find(value => value.category.name == category.name);
-    console.log("menuservice: menuLIst find : " );
+  getMenuListByCategory(category: Category) : Menu[]  {
+    console.log("category" + category.name);
+    //value.category.name === category.name
+    let find: Menu[] = this.menuList.filter(value =>  console.log(value.category.name === category.name));
+    // value.category.name === category.name
+    //console.log("menuservice: menuLIst find : " + find.forEach(value => console.log(value)));
+    return find;
   }
 }

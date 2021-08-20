@@ -11,22 +11,25 @@ import {Menu} from "../../../models/menu";
 })
 export class MenuListComponent implements OnInit {
   @Input() selectedCategory: Category;
-  //menuList: Menu[];
+  menuList: Menu[];
 
 
   constructor(private menuService: MenuService) {
     console.log("in constructor menu-list");
-    this.selectedCategory = {name: ""};
-    //this.menuList = menuList;
+    this.selectedCategory = {name:"Spaghetti"};
+    console.log("type"  + typeof this.selectedCategory);
+    this.menuList = [];
   }
 
   ngOnInit(): void {
     console.log("in oninit menu-list");
+    console.log("cat:" + this.selectedCategory)
   }
 
   ngOnChanges(changes: SimpleChanges){
-    console.log("change occurred:" + this.selectedCategory);
+    console.log( typeof this.selectedCategory);
+    console.log("change occurred cat:" + this.selectedCategory.name);
     // TODO return type
-    this.menuService.getMenuListByCategory(this.selectedCategory);
+    this.menuList = this.menuService.getMenuListByCategory(this.selectedCategory);
   }
 }
