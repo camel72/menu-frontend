@@ -8,6 +8,7 @@ import { CategoryComponent } from './components/category/category.component';
 import { HomeComponent } from './components/home/home.component';
 import { NewComponent } from './components/new/new.component';
 import { MenuListComponent } from './components/category/menu-list/menu-list.component';
+import { IngredientComponent } from './components/category/menu-list/ingredient/ingredient.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MenuListComponent } from './components/category/menu-list/menu-list.com
     CategoryComponent,
     HomeComponent,
     NewComponent,
-    MenuListComponent
+    MenuListComponent,
+    IngredientComponent
   ],
   imports: [
     BrowserModule,

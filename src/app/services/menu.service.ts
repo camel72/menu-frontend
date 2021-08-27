@@ -31,6 +31,29 @@ export class MenuService {
         ingredients: [
           {name: "pasta", quantity: "500 gr."},
           {name: "water", quantity: "1,5 l"}]
+      },
+      {
+        name: "Mosselen",
+        category: visCategory,
+        ingredients: [
+          {name: "water", quantity: "half glas"},
+          {name: "mosselen", quantity: "1kg"}
+        ]
+      },
+      {
+        name: "Hamburgers",
+        category: vleesCategory,
+        ingredients: [
+          {name: "filet américan pur", quantity: "400 gr"}
+        ]
+      },
+      {
+        name: "pompoenburgers",
+        category: vegetarischCategory,
+        ingredients: [
+          {name: "pompoen", quantity: "1 stuk"},
+          {name: "chili peper", quantity: "1 stuk"}
+        ]
       }
     ];
   }
@@ -39,12 +62,7 @@ export class MenuService {
     return this.categories;
   }
 
-  getMenuListByCategory(category: Category) : Menu[]  {
-    console.log("category" + category.name);
-    //value.category.name === category.name
-    let find: Menu[] = this.menuList.filter(value =>  console.log(value.category.name === category.name));
-    // value.category.name === category.name
-    //console.log("menuservice: menuLIst find : " + find.forEach(value => console.log(value)));
-    return find;
+  getMenuListByCategory(category: string): Menu[] {
+    return this.menuList.filter(value => value.category.name === category);
   }
 }

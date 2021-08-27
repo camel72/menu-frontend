@@ -8,15 +8,14 @@ import {MenuService} from "../../services/menu.service";
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
-  items: Category[];
-  categoryService : MenuService;
+  items!: Category[];
+  menuService : MenuService;
 
-  constructor(categoryService: MenuService) {
-    this.categoryService = categoryService;
-    this.items = [];
+  constructor(menuService: MenuService) {
+    this.menuService = menuService;
   }
 
   ngOnInit(): void {
-    this.items = this.categoryService.getCategories();
+    this.items = this.menuService.getCategories();
   }
 }

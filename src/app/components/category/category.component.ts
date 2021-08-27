@@ -11,11 +11,10 @@ import {takeUntil} from "rxjs/operators";
   styleUrls: ['./category.component.scss']
 })
 export class CategoryComponent implements OnInit {
-  selectedCategory: Category
+  selectedCategory!: string;
   changeCategorySubscription: Subscription;
 
   constructor(private _activatedRoute: ActivatedRoute) {
-    this.selectedCategory = {name: ""};
     this.changeCategorySubscription = new Subscription();
   }
 
@@ -23,6 +22,7 @@ export class CategoryComponent implements OnInit {
     this.changeCategorySubscription = this._activatedRoute.params.subscribe(
       params => {
           this.selectedCategory = params['item'];
+
         }
       );
   }
