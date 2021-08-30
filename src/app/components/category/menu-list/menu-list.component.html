@@ -1,12 +1,4 @@
 <div class="bg-light p-5 rounded-lg m-3" *ngFor="let menu of menuList">
-  <h1 class="display-5 ">{{menu.name}}</h1>
-  <hr class="my-4">
-  <ul class="list-group list-group-flush">
-    <div *ngFor="let ingredient of menu.ingredients">
-      <div class="row">
-        <app-ingredient [ingredient]="ingredient"></app-ingredient>
-      </div>
-    </div>
-  </ul>
-  <a class="btn btn-primary btn-lg" href="#" role="button">edit</a>
+  <app-menu [menu]="menu"></app-menu>
+  <a class="btn btn-primary btn-lg m-2" href="#" role="button">edit</a>
 </div>

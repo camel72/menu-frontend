@@ -33,11 +33,26 @@ export class MenuService {
           {name: "water", quantity: "1,5 l"}]
       },
       {
+        name: "pasta2",
+        category: pastaCategory,
+        ingredients: [
+          {name: "pasta2_ingredient1", quantity: "1"},
+          {name: "pasta2_ingredient2", quantity: "2"}]
+      },
+      {
         name: "Mosselen",
         category: visCategory,
         ingredients: [
           {name: "water", quantity: "half glas"},
           {name: "mosselen", quantity: "1kg"}
+        ]
+      },
+      {
+        name: "Vis2",
+        category: visCategory,
+        ingredients: [
+          {name: "vis2_ingredient1", quantity: "1"},
+          {name: "vis2_ingredient2", quantity: "2"}
         ]
       },
       {
@@ -48,11 +63,28 @@ export class MenuService {
         ]
       },
       {
+        name: "vlees2",
+        category: vleesCategory,
+        ingredients: [
+          {name: "vlees2_ingredient1", quantity: "1"},
+          {name: "vlees2_ingredient2", quantity: "2"},
+          {name: "vlees3_ingredient3", quantity: "3"}
+        ]
+      },
+      {
         name: "pompoenburgers",
         category: vegetarischCategory,
         ingredients: [
           {name: "pompoen", quantity: "1 stuk"},
           {name: "chili peper", quantity: "1 stuk"}
+        ]
+      },
+      {
+        name: "vegetarisch2",
+        category: vegetarischCategory,
+        ingredients: [
+          {name: "veg2_ingredient1", quantity: "1 stuk"},
+          {name: "veg2_ingredient2", quantity: "1 stuk"}
         ]
       }
     ];

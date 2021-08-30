@@ -9,8 +9,11 @@ import {Ingredient} from "../../../../models/ingredient";
 export class IngredientComponent implements OnInit {
 
   @Input()
-   ingredient!: Ingredient;
+  ingredient!: Ingredient;
 
-  constructor() { }
-  ngOnInit(): void {  }
+  constructor() {
+  }
+
+  ngOnInit(): void {
+  }
 }

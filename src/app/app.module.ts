@@ -9,6 +9,9 @@ import { HomeComponent } from './components/home/home.component';
 import { NewComponent } from './components/new/new.component';
 import { MenuListComponent } from './components/category/menu-list/menu-list.component';
 import { IngredientComponent } from './components/category/menu-list/ingredient/ingredient.component';
+import { MenuComponent } from './components/category/menu-list/menu/menu.component';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,11 +21,14 @@ import { IngredientComponent } from './components/category/menu-list/ingredient/
     HomeComponent,
     NewComponent,
     MenuListComponent,
-    IngredientComponent
+    IngredientComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AccordionModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
