@@ -2,11 +2,19 @@
 <hr class="my-4">
 <ul class="list-group list-group-flush">
   <accordion>
-    <accordion-group heading="Ingrediënten" >
-      <div *ngFor="let ingredient of menu.ingredients">
-        <div class="row">
+    <accordion-group heading="details">
+      <h3>Ingredients</h3>
+      <div class="row" *ngFor="let ingredient of menu.ingredients">
+        <ul class="list-group">
           <app-ingredient [ingredient]="ingredient"></app-ingredient>
-        </div>
+        </ul>
+
+      </div>
+      <h3>Preparations</h3>
+      <div class="row " *ngFor="let preparation of menu.preparations">
+        <ul class="list-group">
+          <app-preparation [preparation]="preparation"></app-preparation>
+        </ul>
       </div>
     </accordion-group>
   </accordion>

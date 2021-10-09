@@ -22,7 +22,6 @@ export class CategoryComponent implements OnInit {
     this.changeCategorySubscription = this._activatedRoute.params.subscribe(
       params => {
           this.selectedCategory = params['item'];
-
         }
       );
   }

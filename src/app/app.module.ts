@@ -8,10 +8,12 @@ import { CategoryComponent } from './components/category/category.component';
 import { HomeComponent } from './components/home/home.component';
 import { NewComponent } from './components/new/new.component';
 import { MenuListComponent } from './components/category/menu-list/menu-list.component';
-import { IngredientComponent } from './components/category/menu-list/ingredient/ingredient.component';
+import { IngredientComponent } from './components/category/menu-list/menu/ingredient/ingredient.component';
 import { MenuComponent } from './components/category/menu-list/menu/menu.component';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PreparationComponent } from './components/category/menu-list/menu/preparation/preparation.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NewComponent,
     MenuListComponent,
     IngredientComponent,
-    MenuComponent
+    MenuComponent,
+    PreparationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AccordionModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
