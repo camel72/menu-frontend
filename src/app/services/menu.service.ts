@@ -27,7 +27,7 @@ export class MenuService {
 
     this.menuList = [
       {
-        name: "Pasta1",
+        name: "pasta1",
         category: pastaCategory,
         ingredients: [
           {name: "pasta1_ingredient1", quantity: "1"},
