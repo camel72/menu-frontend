@@ -3,40 +3,56 @@
 <div class="row">
   <div class="col-12 col-md-12">
     <form [formGroup]="menuMultiStepForm" (ngSubmit)="onSubmit()">
-      <div *ngIf="step == 1" formGroupName="menuNameForm">
-        <div class="row">
-          <div class="col-12 col-md-6">
-            <div class="form-group">
-              <label for="menuName" class="form-label">Name</label>
-              <input type="text" class="form-control" formControlName="menuName" id="menuName" aria-describedby="name">
+      <div *ngIf="step == 1">
+        <div formGroupName="menuNameForm">
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <div class="input-group-md-6">
+                <label for="menuName" class="form-label">Name</label>
+                <input type="text" class="form-control" formControlName="menuName" id="menuName"
+                       aria-describedby="menuName">
+                <span class="btn-danger" *ngIf="menuMultiStepForm.get('menuNameForm.menuName')?.invalid
+                          && !menuMultiStepForm.get('menuNameForm.menuName')?.untouched" class="help-block">
+                  Please enter a menu name
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <br><br>
       <div *ngIf="step == 2" formGroupName="ingredientsForm">
         <div class="row">
           <div class="col-6 col-md-3">
             <button type="button" class="btn btn-primary" (click)="onAddIngredient()">Add ingredient</button>
           </div>
-          <br>
+          <br><br><br>
         </div>
         <div class="col-12 col-md-6" formArrayName="ingredients">
           <div class="row" *ngFor="let ingredientCtrl of ingredients.controls; let i = index"
                [formGroupName]="i">
             <div class="col-12 col-md-4">
-              <div class="form-group">
+              <div class="input-group-md-6">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control" formControlName="name" id="name">
+                <span class="btn-danger" *ngIf="ingredients.controls[i].get('name')?.invalid
+                          && !ingredients.controls[i].get('name')?.untouched" class="help-block">
+                  Please enter an ingredient name
+                </span>
               </div>
             </div>
             <div class="col-12 col-md-4">
-              <div class="form-group">
+              <div class="input-group-md-4">
                 <label for="amount" class="form-label">amount</label>
                 <input type="text" class="form-control" formControlName="amount" id="amount">
               </div>
+              <span class="btn-danger" *ngIf="ingredients.controls[i].get('amount')?.invalid
+                          && !ingredients.controls[i].get('amount')?.untouched" class="help-block">
+                  Please enter amount
+                </span>
             </div>
-            <div class="col-12 col-md-4">
-              <div class="form-group">
+            <div *ngIf="ingredients.length > 1" class="col-12 col-md-4">
+              <div class="input-group-md-4">
                 <label class="form-label"></label>
                 <button class="btn btn-danger" (click)="onDeleteIngredient(i)">X</button>
               </div>
@@ -55,13 +71,13 @@
           <div class="row" *ngFor="let instructionCtrl of instructions.controls; let i = index"
                [formGroupName]="i">
             <div class="col-12 col-md-4">
-              <div class="form-group">
+              <div class="input-group-md-4">
                 <label for="instruction" class="form-label">Instruction</label>
                 <input type="text" class="form-control" formControlName="instruction" id="instruction">
               </div>
             </div>
             <div class="col-12 col-md-4">
-              <div class="form-group">
+              <div class="input-group-md-4">
                 <label class="form-label"></label>
                 <button class="btn btn-danger" (click)="onDeleteInstruction(i)">X</button>
               </div>
@@ -71,11 +87,16 @@
       </div>
       <br>
       <a class="btn btn-primary mx-2" *ngIf="step != 1" (click)="previous()">Previous</a>
-      <button type="submit" class="btn btn-primary mx-2" *ngIf="step != 3">Next</button>
-      <button type="submit" class="btn btn-primary mx-2" *ngIf="step == 3">Submit</button>
+      <button type="submit" class="btn btn-primary mx-2" *ngIf="step != 3"
+              [disabled]="menuMultiStepForm.get('menuNameForm.menuName')?.invalid">Next
+      </button>
+      <button type="submit" class="btn btn-primary mx-2" *ngIf="step == 3" [disabled]="!menuMultiStepForm.valid">
+        Submit
+      </button>
       <br>
       <br>
-      <pre>step = {{step}} form =  {{menuMultiStepForm.value | json}}</pre>
+      <pre>step = {{step}} form =  {{menuMultiStepForm.value | json}}
+        valid {{menuMultiStepForm.get('menuNameForm.menuName')?.valid}}</pre>
     </form>
   </div>
 </div>

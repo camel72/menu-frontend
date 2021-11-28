@@ -10,7 +10,7 @@ export class NewComponent implements OnInit {
   step: number = 1;
   menuMultiStepForm = new FormGroup({
     menuNameForm: new FormGroup({
-      menuName: new FormControl(null, null)
+      menuName: new FormControl(null, Validators.required)
     }),
     ingredientsForm: new FormGroup({
       ingredients: new FormArray([])
@@ -33,15 +33,15 @@ export class NewComponent implements OnInit {
 
   onAddIngredient() {
     this.ingredients.push(new FormGroup({
-        name: new FormControl(null, null),
-        amount: new FormControl(null, null)
+        name: new FormControl(null, Validators.required),
+        amount: new FormControl(null, Validators.required)
       })
     );
   }
 
   onAddInstruction() {
     this.instructions.push(new FormGroup({
-      instruction: new FormControl(null, null),
+      instruction: new FormControl(null, Validators.required),
     })
     );
   }
@@ -57,6 +57,7 @@ export class NewComponent implements OnInit {
   onSubmit() {
     console.log('in submit');
     if (this.menuMultiStepForm.controls.menuNameForm.invalid && this.step == 1) {
+      console.log('invalid');
       return;
     }
     if (this.menuMultiStepForm.controls.ingredientsForm.invalid && this.step == 2) {
