@@ -1,0 +1,44 @@
+<div [formGroup]="newMenuForm">
+  <div formGroupName="ingredientsForm">
+    <div class="row">
+      <div class="col-6 col-md-3">
+        <button type="button" class="btn btn-primary" (click)="onAddIngredient()">Add ingredient</button>
+      </div>
+      <br><br><br>
+    </div>
+    <div class="col-12 col-md-6" formArrayName="ingredients">
+      <div class="row" *ngFor="let ingredientCtrl of ingredients.controls; let i = index"
+           [formGroupName]="i">
+        <div class="col-12 col-md-4">
+          <div class="input-group-md-6">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" formControlName="name" id="name">
+            <span class="btn-danger" *ngIf="ingredients.controls[i].get('name')?.invalid
+                            && !ingredients.controls[i].get('name')?.untouched" class="help-block">
+                    Please enter an ingredient name
+                  </span>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="input-group-md-4">
+            <label for="amount" class="form-label">amount</label>
+            <input type="text" class="form-control" formControlName="amount" id="amount">
+          </div>
+          <span class="btn-danger" *ngIf="ingredients.controls[i].get('amount')?.invalid
+                            && !ingredients.controls[i].get('amount')?.untouched" class="help-block">
+                    Please enter a valid amount
+          </span>
+        </div>
+        <div *ngIf="ingredients.length > 1" class="col-12 col-md-4">
+          <div class="input-group-md-4">
+            <label class="form-label"></label>
+            <button class="btn btn-danger" (click)="onDeleteIngredient(i)">X</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

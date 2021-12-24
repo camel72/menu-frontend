@@ -1,0 +1,18 @@
+<div [formGroup]="newMenuForm">
+  <div formGroupName="menuNameForm">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="input-group-md-6">
+          <label for="menuName" class="form-label">Name</label>
+          <input type="text" class="form-control" formControlName="menuName" id="menuName"
+                 aria-describedby="menuName">
+          <span class="btn-danger" *ngIf="menuNameForm.invalid
+                          && !menuNameForm.untouched" class="help-block">
+                  Please enter a name
+                </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

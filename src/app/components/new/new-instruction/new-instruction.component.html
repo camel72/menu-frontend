@@ -1,0 +1,27 @@
+<div [formGroup]="newMenuForm">
+  <div formGroupName="instructionsForm">
+    <div class="row">
+      <div class="col-6 col-md-3">
+        <button type="button" class="btn btn-primary" (click)="onAddInstruction()">Add instruction</button>
+      </div>
+      <br>
+    </div>
+    <div class="col-12 col-md-6" formArrayName="instructions">
+      <div class="row" *ngFor="let instructionCtrl of instructions.controls; let i = index"
+           [formGroupName]="i">
+        <div class="col-12 col-md-4">
+          <div class="input-group-md-4">
+            <label for="instruction" class="form-label">Instruction</label>
+            <input type="text" class="form-control" formControlName="instruction" id="instruction">
+          </div>
+        </div>
+        <div *ngIf="instructions.length > 1" class="col-12 col-md-4">
+          <div class="input-group-md-4">
+            <label class="form-label"></label>
+            <button class="btn btn-danger" (click)="onDeleteInstruction(i)">X</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

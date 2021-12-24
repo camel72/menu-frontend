@@ -14,6 +14,9 @@ import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PreparationComponent } from './components/category/menu-list/menu/preparation/preparation.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import {NewInstructionComponent} from "./components/new/new-instruction/new-instruction.component";
+import {NewIngredientComponent} from "./components/new/new-ingredient/new-ingredient.component";
+import {NewNameComponent} from "./components/new/new-name/new-name.component";
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import {ReactiveFormsModule} from "@angular/forms";
     MenuListComponent,
     IngredientComponent,
     MenuComponent,
-    PreparationComponent
+    PreparationComponent,
+    NewIngredientComponent,
+    NewNameComponent,
+    NewInstructionComponent
   ],
   imports: [
     BrowserModule,
