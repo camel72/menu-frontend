@@ -2,9 +2,9 @@
   <div formGroupName="instructionsForm">
     <div class="row">
       <div class="col-6 col-md-3">
-        <button type="button" class="btn btn-primary" (click)="onAddInstruction()">Add instruction</button>
+        <button type="button" class="btn btn-outline-info" (click)="onAddInstruction()">Add instruction</button>
       </div>
-      <br>
+      <br><br><br>
     </div>
     <div class="col-12 col-md-6" formArrayName="instructions">
       <div class="row" *ngFor="let instructionCtrl of instructions.controls; let i = index"
@@ -13,6 +13,10 @@
           <div class="input-group-md-4">
             <label for="instruction" class="form-label">Instruction</label>
             <input type="text" class="form-control" formControlName="instruction" id="instruction">
+            <span class="btn-danger" *ngIf="instructionCtrl.get('instruction')?.invalid
+                            && !instructions.controls[i].get('instruction')?.untouched" class="help-block">
+                    Please enter an instruction
+             </span>
           </div>
         </div>
         <div *ngIf="instructions.length > 1" class="col-12 col-md-4">

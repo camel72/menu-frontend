@@ -2,7 +2,7 @@
   <div formGroupName="ingredientsForm">
     <div class="row">
       <div class="col-6 col-md-3">
-        <button type="button" class="btn btn-primary" (click)="onAddIngredient()">Add ingredient</button>
+        <button type="button" class="btn btn-outline-info" (click)="onAddIngredient()">Add ingredient</button>
       </div>
       <br><br><br>
     </div>
@@ -16,7 +16,7 @@
             <span class="btn-danger" *ngIf="ingredients.controls[i].get('name')?.invalid
                             && !ingredients.controls[i].get('name')?.untouched" class="help-block">
                     Please enter an ingredient name
-                  </span>
+             </span>
           </div>
         </div>
         <div class="col-12 col-md-4">
@@ -39,6 +39,3 @@
     </div>
   </div>
 </div>
-
-
-
