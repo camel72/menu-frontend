@@ -32,7 +32,7 @@ export class MenuService {
         ingredients: [
           {name: "pasta1_ingredient1", quantity: "1"},
           {name: "pasta2_ingredient1", quantity: "2"}],
-        preparations: [
+        instructions: [
           {action: "first action pasta 1"},
           {action: "second action pasta 1"},
           {action: "third action pasta 1"}
@@ -45,7 +45,7 @@ export class MenuService {
           {name: "pasta2_ingredient1", quantity: "1"},
           {name: "pasta2_ingredient2", quantity: "2"}
         ],
-        preparations: [
+        instructions: [
           {action: "first action pasta 2"},
           {action: "second action pasta 2"},
           {action: "third action pasta 2"}
@@ -58,7 +58,7 @@ export class MenuService {
           {name: "vis1_ingredient1", quantity: "1"},
           {name: "vis1_ingredient2", quantity: "2"}
         ],
-        preparations: [
+        instructions: [
           {action: "first action vis1"},
           {action: "second action vis1"},
           {action: "third action vis1"}
@@ -71,7 +71,7 @@ export class MenuService {
           {name: "vis2_ingredient1", quantity: "1"},
           {name: "vis2_ingredient2", quantity: "2"}
         ],
-        preparations: [
+        instructions: [
           {action: "first action vis2"},
           {action: "second action vis2"},
           {action: "third action vis3"}
@@ -85,7 +85,7 @@ export class MenuService {
             {name: "vlees1_ingredient1", quantity: "1"},
             {name: "vlees2_ingredient1", quantity: "2"}
           ],
-        preparations: [
+        instructions: [
           {action: "first action vlees1"},
           {action: "second action vlees1"},
           {action: "third action vlees1"}
@@ -99,7 +99,7 @@ export class MenuService {
           {name: "vlees2_ingredient2", quantity: "2"},
           {name: "vlees3_ingredient3", quantity: "3"}
         ],
-        preparations: [
+        instructions: [
           {action: "first action vlees2"},
           {action: "second action vlees2"},
           {action: "third action vlees2"}
@@ -113,7 +113,7 @@ export class MenuService {
             {name: "vegetarisch1_ingredient1", quantity: "1"},
             {name: "vegetarisch2_ingredient2", quantity: "2"},
           ],
-        preparations: [
+        instructions: [
           {action: "first action vegetarisch1"},
           {action: "second action vegetarisch1"},
           {action: "third action vegetarisch1"}
@@ -127,7 +127,7 @@ export class MenuService {
           {name: "veg2_ingredient1", quantity: "1 stuk"},
           {name: "veg2_ingredient2", quantity: "1 stuk"}
         ],
-        preparations: [
+        instructions: [
           {action: "first action vegetarisch2"},
           {action: "second action vegetarisch2"},
           {action: "third action vegetarisch2"}

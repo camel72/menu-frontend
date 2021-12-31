@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Preparation} from "../../../../../models/preparation";
+import {Instruction} from "../../../../../models/instruction";
 
 @Component({
   selector: 'app-preparation',
@@ -8,7 +8,7 @@ import {Preparation} from "../../../../../models/preparation";
 export class PreparationComponent implements OnInit {
 
   @Input()
-  preparation!: Preparation;
+  preparation!: Instruction;
 
   constructor() {
   }
